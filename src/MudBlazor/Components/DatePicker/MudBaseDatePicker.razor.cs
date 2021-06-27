@@ -116,7 +116,7 @@ namespace MudBlazor
         [Parameter] public bool ShowWeekNumbers { get; set; }
 
         /// <summary>
-        /// Format of the selected date in the title. Per default this is "ddd, dd MMM" which abbreviates day and month names. 
+        /// Format of the selected date in the title. By default, this is "ddd, dd MMM" which abbreviates day and month names. 
         /// For instance, display the long names like this "dddd, dd. MMMM". 
         /// </summary>
         [Parameter] public string TitleDateFormat { get; set; } = "ddd, dd MMM";
@@ -244,7 +244,7 @@ namespace MudBlazor
         }
 
         protected abstract string GetTitleDateString();
-        
+
         protected string FormatTitleDate(DateTime? date)
         {
             return date?.ToString(TitleDateFormat ?? "ddd, dd MMM", Culture) ?? "";
