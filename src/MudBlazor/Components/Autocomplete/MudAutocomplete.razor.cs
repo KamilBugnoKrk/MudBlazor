@@ -113,7 +113,7 @@ namespace MudBlazor
         public int? MaxItems { get; set; } = 10;
 
         /// <summary>
-        /// Minimum characters to initiate a search, defaults to 2
+        /// Minimum characters to initiate a search
         /// </summary>
         [Parameter]
         public int MinCharacters { get; set; } = 0;
@@ -289,6 +289,18 @@ namespace MudBlazor
             }
 
             IsOpen = true;
+            StateHasChanged();
+        }
+
+        /// <summary>
+        /// Clears the autocomplete's text
+        /// </summary>
+        public async Task Clear()
+        {
+            await SetTextAsync(string.Empty, updateValue: false);
+            await CoerceValueToText();
+            IsOpen = false;
+            _timer?.Dispose();
             StateHasChanged();
         }
 

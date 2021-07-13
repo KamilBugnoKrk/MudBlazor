@@ -19,7 +19,6 @@
 }
 
 .docs-page-content {
-
 }
 
 .docs-page-section {
@@ -75,6 +74,26 @@
             height: 100%;
             overflow: auto;
             flex-direction: column;
+        }
+    }
+}
+
+.docs-contents {
+    display: none;
+}
+
+@media only screen and (min-width: 1640px) {
+    .mud-container-maxwidth-md {
+        .docs-contents {
+            display: block;
+        }
+    }
+}
+
+@media only screen and (min-width: 1940px) {
+    .mud-container-maxwidth-lg {
+        .docs-contents {
+            display: block;
         }
     }
 }
